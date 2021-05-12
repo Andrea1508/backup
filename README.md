@@ -3,7 +3,7 @@
 ### En este mapa podremos observar cómo sería una ruta por Tarragona visitando diferentes monumentos
 La ruta empieza desde la Imperial Tarraco, que es donde se sitúa la estación de autobuses y hace una ruta circular para acabar en el inicio.
 
-___Para la realización del mapa se han hecho varios pasos:
+*Para la realización del mapa se han hecho varios pasos:
 
 1.	Digitalizar los restaurantes (puntos)
 2.	Digitalizar los monumentos o sitios de interés (polígono)
@@ -16,10 +16,10 @@ ___Para la realización del mapa se han hecho varios pasos:
 
 # Precio de los menús
 
-___Para la realización de la tabla:
+*Para la realización de la tabla:
 
 Se ha creado una tabla de los restaurantes, el precio del menú y si son vegetarianos o con opción para vegetarianos. La tabla se ha realizado mediante los comandos de boostrap 4.
 
-___Para la realización de la gráfica:
+*Para la realización de la gráfica:
 
 La gráfica de la página web ha sido posible mediante el lenguaje mermaid.
