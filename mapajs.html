@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css">
+  <style>
+    #map { 
+    widh: 50px;
+    height: 560px; }
+   </style>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa-restaurantes</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link href="css/css.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg " id="navbar">
+    <img src="Fotos/Logo_2.jpg" alt="Logo_2" style="width:50px;height:50px;" class="rounded">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mapajs.html">Mapa</a>
+        <li class="nav-item">
+          <a class="nav-link" href="Sabias que.html">¿Sabias que...?</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="recetas.html">Recetas</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="Contacto.html">Contacto</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="itinerario.html">Itinerario</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <div class="container text-dark rounded text-center">
+    <h3>
+     Restaurantes vegetarianos en Tarragona
+    </h3>
+  </div>
+  <div id="map" class="container rounded  leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative; outline: none;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(106px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 17; transform: translate3d(416px, 358px, 0px) scale(0.5);"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(278px, 221px, 0px) scale(1);"><img alt="" role="presentation" src="http://c.tile.openstreetmap.org/11/996/761.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-40px, -230px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://a.tile.openstreetmap.org/11/996/762.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-40px, 26px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://b.tile.openstreetmap.org/11/995/761.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-296px, -230px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://a.tile.openstreetmap.org/11/997/761.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(216px, -230px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://c.tile.openstreetmap.org/11/995/762.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-296px, 26px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://b.tile.openstreetmap.org/11/997/762.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(216px, 26px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://b.tile.openstreetmap.org/11/996/763.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-40px, 282px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://c.tile.openstreetmap.org/11/997/763.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(216px, 282px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://c.tile.openstreetmap.org/11/998/762.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(472px, 26px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://b.tile.openstreetmap.org/11/998/761.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(472px, -230px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://a.tile.openstreetmap.org/11/995/763.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-296px, 282px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://a.tile.openstreetmap.org/11/998/763.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(472px, 282px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://b.tile.openstreetmap.org/11/994/762.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-552px, 26px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://a.tile.openstreetmap.org/11/994/761.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-552px, -230px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://c.tile.openstreetmap.org/11/994/763.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-552px, 282px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"><img src="https://unpkg.com/leaflet@1.0.2/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(547px, 464px, 0px);"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"><img src="https://unpkg.com/leaflet@1.0.2/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive leaflet-marker-draggable" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(547px, 464px, 0px); z-index: 464;"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(255114px, 195125px, 0px) scale(1024);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">-</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"><div class="leaflet-control-scale leaflet-control"><div class="leaflet-control-scale-line" style="width: 88px;">5 km</div><div class="leaflet-control-scale-line" style="width: 85px;">3 mi</div></div></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a></div></div></div></div>
+ <script>var map = L.map('map').
+  setView([41.117052, 1.2521493], 
+  14);
+   
+  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+      maxZoom: 18
+  }).addTo(map);
+  
+  L.control.scale().addTo(map);
+  L.marker([41.117884, 1.257138], {draggable: true}).addTo(map);
+  L.marker([41.117325, 1.259430], {draggable: true}).addTo(map);
+  L.marker([41.117987, 1.258272], {draggable: true}).addTo(map);
+  L.marker([41.1178841, 1.256351], {draggable: true}).addTo(map);
+  L.marker([41.117300, 1.255525], {draggable: true}).addTo(map);
+  L.marker([41.117987, 1.258272], {draggable: true}).addTo(map);
+  L.marker([41.114030, 1.256443], {draggable: true}).addTo(map);
+  L.marker([41.114807, 1.249353], {draggable: true}).addTo(map);
+  L.marker([41.116621, 1.247765], {draggable: true}).addTo(map);
+  </script> 
+ 
+
+ <footer>
+  <div class="social col-12 d-flex justify-content-center container caja-footer">
+   <p class="copy">&copy; Andrea Pizarro,2021 - Todos los derechos reservados</p></div>
+   <div class="social col-12 d-flex justify-content-center container  caja-footer">
+   <p>633911508&nbsp;&nbsp;</p>
+    <a href="#"><img src="Fotos/wats1.jpg" alt="whatsapp" style="width:50px;height:50px;" class="rounded"></a>
+    
+    <p>&nbsp;&nbsp;@andrepive&nbsp;&nbsp;</p>
+    <a href="https://www.instagram.com/andrepive/"><img src="Fotos/instagram.png" alt="instagram" style="width:50px;height:50px;" class="rounded"></a> 
+  </div>
+  <div class="col-12 d-flex justify-content-center container  caja-footer">
+  <p><a href="mailto:andrepivel@gmail.com">andrepivel@gmail.com</a></p>
+  </div>
+  
+</footer>
+ 
+</body>
+</html>
