@@ -8,11 +8,15 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/MarkerCluster.css">
+        <link rel="stylesheet" href="css/MarkerCluster.Default.css">
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <style>
-        #map {
-            width: 1560px;
-            height: 788px;
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
         }
         </style>
         <title></title>
@@ -30,9 +34,10 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="data/monumentos_1.js"></script>
-        <script src="data/restaurantes_2.js"></script>
-        <script src="data/ruta_3.js"></script>
+        <script src="js/leaflet.markercluster.js"></script>
+        <script src="data/monumentos_2.js"></script>
+        <script src="data/restaurantes_3.js"></script>
+        <script src="data/ruta_4.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -51,7 +56,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[41.105309241809174,1.2613383365338215],[41.12973448324239,1.3256041315729732]]);
+        }).fitBounds([[41.10303845725599,1.233152846497187],[41.12135887403849,1.2813521927764213]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -59,10 +64,10 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_ESRItopo_0');
-        map.getPane('pane_ESRItopo_0').style.zIndex = 400;
-        var layer_ESRItopo_0 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-            pane: 'pane_ESRItopo_0',
+        map.createPane('pane_googlehybrid_0');
+        map.getPane('pane_googlehybrid_0').style.zIndex = 400;
+        var layer_googlehybrid_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            pane: 'pane_googlehybrid_0',
             opacity: 1.0,
             attribution: '',
             minZoom: 1,
@@ -70,9 +75,22 @@
             minNativeZoom: 0,
             maxNativeZoom: 18
         });
-        layer_ESRItopo_0;
-        map.addLayer(layer_ESRItopo_0);
-        function pop_monumentos_1(feature, layer) {
+        layer_googlehybrid_0;
+        map.addLayer(layer_googlehybrid_0);
+        map.createPane('pane_ESRItopo_1');
+        map.getPane('pane_ESRItopo_1').style.zIndex = 401;
+        var layer_ESRItopo_1 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ESRItopo_1',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_ESRItopo_1;
+        map.addLayer(layer_ESRItopo_1);
+        function pop_monumentos_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -83,7 +101,7 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['monumento'] !== null ? autolinker.link(feature.properties['monumento'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>monumento</strong><br />' + (feature.properties['monumento'] !== null ? autolinker.link(feature.properties['monumento'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['foto'] !== null ? '<img src="images/' + String(feature.properties['foto']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
@@ -92,9 +110,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_monumentos_1_0() {
+        function style_monumentos_2_0() {
             return {
-                pane: 'pane_monumentos_1',
+                pane: 'pane_monumentos_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -107,21 +125,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_monumentos_1');
-        map.getPane('pane_monumentos_1').style.zIndex = 401;
-        map.getPane('pane_monumentos_1').style['mix-blend-mode'] = 'normal';
-        var layer_monumentos_1 = new L.geoJson(json_monumentos_1, {
+        map.createPane('pane_monumentos_2');
+        map.getPane('pane_monumentos_2').style.zIndex = 402;
+        map.getPane('pane_monumentos_2').style['mix-blend-mode'] = 'normal';
+        var layer_monumentos_2 = new L.geoJson(json_monumentos_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_monumentos_1',
-            layerName: 'layer_monumentos_1',
-            pane: 'pane_monumentos_1',
-            onEachFeature: pop_monumentos_1,
-            style: style_monumentos_1_0,
+            dataVar: 'json_monumentos_2',
+            layerName: 'layer_monumentos_2',
+            pane: 'pane_monumentos_2',
+            onEachFeature: pop_monumentos_2,
+            style: style_monumentos_2_0,
         });
-        bounds_group.addLayer(layer_monumentos_1);
-        map.addLayer(layer_monumentos_1);
-        function pop_restaurantes_2(feature, layer) {
+        bounds_group.addLayer(layer_monumentos_2);
+        map.addLayer(layer_monumentos_2);
+        function pop_restaurantes_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -132,55 +150,56 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Restaurant'] !== null ? autolinker.link(feature.properties['Restaurant'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Restaurant</strong><br />' + (feature.properties['Restaurant'] !== null ? autolinker.link(feature.properties['Restaurant'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['foto1'] !== null ? '<img src="images/' + String(feature.properties['foto1']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Menu'] !== null ? autolinker.link(feature.properties['Menu'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Menu</th>\
+                        <td>' + (feature.properties['Menu'] !== null ? autolinker.link(feature.properties['Menu'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_restaurantes_2_0() {
+        function style_restaurantes_3_0() {
             return {
-                pane: 'pane_restaurantes_2',
-                radius: 8.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,136,0,1.0)',
+                pane: 'pane_restaurantes_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/restaurant.svg',
+            iconSize: [20.52, 20.52]
+        }),
                 interactive: true,
             }
         }
-        map.createPane('pane_restaurantes_2');
-        map.getPane('pane_restaurantes_2').style.zIndex = 402;
-        map.getPane('pane_restaurantes_2').style['mix-blend-mode'] = 'normal';
-        var layer_restaurantes_2 = new L.geoJson(json_restaurantes_2, {
+        map.createPane('pane_restaurantes_3');
+        map.getPane('pane_restaurantes_3').style.zIndex = 403;
+        map.getPane('pane_restaurantes_3').style['mix-blend-mode'] = 'normal';
+        var layer_restaurantes_3 = new L.geoJson(json_restaurantes_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_restaurantes_2',
-            layerName: 'layer_restaurantes_2',
-            pane: 'pane_restaurantes_2',
-            onEachFeature: pop_restaurantes_2,
+            dataVar: 'json_restaurantes_3',
+            layerName: 'layer_restaurantes_3',
+            pane: 'pane_restaurantes_3',
+            onEachFeature: pop_restaurantes_3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_restaurantes_2_0(feature));
+                return L.marker(latlng, style_restaurantes_3_0(feature));
             },
         });
-        bounds_group.addLayer(layer_restaurantes_2);
-        map.addLayer(layer_restaurantes_2);
-        function pop_ruta_3(feature, layer) {
+        var cluster_restaurantes_3 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+            spiderfyDistanceMultiplier: 2});
+        cluster_restaurantes_3.addLayer(layer_restaurantes_3);
+
+        bounds_group.addLayer(layer_restaurantes_3);
+        cluster_restaurantes_3.addTo(map);
+        function pop_ruta_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -191,15 +210,15 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>id</strong><br />' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_ruta_3_0() {
+        function style_ruta_4_0() {
             return {
-                pane: 'pane_ruta_3',
+                pane: 'pane_ruta_4',
                 opacity: 1,
                 color: 'rgba(219,30,42,1.0)',
                 dashArray: '',
@@ -210,20 +229,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_ruta_3');
-        map.getPane('pane_ruta_3').style.zIndex = 403;
-        map.getPane('pane_ruta_3').style['mix-blend-mode'] = 'normal';
-        var layer_ruta_3 = new L.geoJson(json_ruta_3, {
+        map.createPane('pane_ruta_4');
+        map.getPane('pane_ruta_4').style.zIndex = 404;
+        map.getPane('pane_ruta_4').style['mix-blend-mode'] = 'normal';
+        var layer_ruta_4 = new L.geoJson(json_ruta_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ruta_3',
-            layerName: 'layer_ruta_3',
-            pane: 'pane_ruta_3',
-            onEachFeature: pop_ruta_3,
-            style: style_ruta_3_0,
+            dataVar: 'json_ruta_4',
+            layerName: 'layer_ruta_4',
+            pane: 'pane_ruta_4',
+            onEachFeature: pop_ruta_4,
+            style: style_ruta_4_0,
         });
-        bounds_group.addLayer(layer_ruta_3);
-        map.addLayer(layer_ruta_3);
+        bounds_group.addLayer(layer_ruta_4);
+        map.addLayer(layer_ruta_4);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -234,6 +253,8 @@
         .className += ' fa fa-search';
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/ruta_4.png" /> ruta': layer_ruta_4,'<img src="legend/restaurantes_3.png" /> restaurantes': cluster_restaurantes_3,'<img src="legend/monumentos_2.png" /> monumentos': layer_monumentos_2,"ESRI topo": layer_ESRItopo_1,"google hybrid": layer_googlehybrid_0,}).addTo(map);
         setBounds();
         </script>
     </body>
