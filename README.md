@@ -1,6 +1,6 @@
 # Wilnut
-###La página web que se explicara a continuación pertenece a la asignatura de WEBGIS creada a partir de las enseñanzas de clase y en casa.
-####Para ver la página web Wilnut haz click al siguiente enlace. (https://andrea1508.github.io/backup/index.html)
+### La página web que se explicara a continuación pertenece a la asignatura de WEBGIS creada a partir de las enseñanzas de clase y en casa.
+#### Para ver la página web Wilnut haz click al siguiente enlace. (https://andrea1508.github.io/backup/index.html)
 
 ## La temática 
 La tematica web trata sobre las ventajas de empezar a reducir el consumo de carne y lo facil, saludable y rico que es llevar una dieta vegetariana.
