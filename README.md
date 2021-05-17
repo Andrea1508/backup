@@ -1,6 +1,6 @@
 # Wilnut
-**La página web que se explicara a continuación pertenece a la asignatura de WEBGIS creada a partir de las enseñanzas de clase y en casa.
-*Para ver la página web Wilnut haz click al siguiente enlace. (https://andrea1508.github.io/backup/index.html)
+###La página web que se explicara a continuación pertenece a la asignatura de WEBGIS creada a partir de las enseñanzas de clase y en casa.
+####Para ver la página web Wilnut haz click al siguiente enlace. (https://andrea1508.github.io/backup/index.html)
 
 ## La temática 
 La tematica web trata sobre las ventajas de empezar a reducir el consumo de carne y lo facil, saludable y rico que es llevar una dieta vegetariana.
@@ -28,7 +28,7 @@ Para que la página web tenga armonia, se creo la carpeta CSS a la vez del HTML 
 ## Contenido de la página web
 La página web trata sobre la comida vegetariana y sana, motivos para reducir el consumo de carne, una página de curiosidades, recetas para empezar una nueva forma de comer, un mapa donde se encuentran ubicados algunos restaurantes con opciones vegetarianas en Tarragona, otro mapa donde puedes poner distinas coordenadas y viajas a traves del mapa, un apartado con una tabla y gráfica ciurcular con el precio del menú de los restaurantes seleccionados y por último una pagina de contacto. En la pagina web hay 3 tipos de layouts que se explicaran a continuación.
 
-___Página principal
+#### Página principal
 
 Lo primero que se observa en la pagina principal es la barra de navegación con el logo en el lado
 izquierdo. Seguidamente hay un carrusel con distintas imágenes de comida, donde luego se
@@ -38,7 +38,7 @@ contenían otros contenedores en el interior y fotos.
 Abajo del todo se encuentra el pie de página, igual que en las siguientes páginas que se
 explicaran a continuación.
 
-___Mapa 
+#### Mapa 
 
 Se ha realizado mediante una API de Google para generar el mapa, al no tener la licencia no es del todo perfecta, donde añadiendo las coordenadas que desee, le lleva al lugar del mapa de dichas coordenadas, para ello se ha utilizado el JavaScript para obtener los datos de JSON. 
 Se ha generado un formulario HTML para poder modificar el contenido del mapa pasándole parámetros a la API. 
@@ -46,18 +46,18 @@ En el JavaScript encontramos un código con 3 selectores y un botón para determ
 En el HTML, tenemos la cabecera y el footer igual que en todas las paginas de la página web y en el body encontramos el elemento <label> que representa una etiqueta que puede ser asociada a un control de formulario, y que se supone provee una descripción corta para éste, y el elemento <input> se usa para crear controles interactivos para formularios basados en la web con el fin de recibir datos del usuario.
 
 
-___Sabias que...
+#### Sabias que...
 
 Como en todas se encuentra la barra y al final el pie de página. Entre medio tenemos el body
 con un layout distinto, ya que, en este apartado hay tres columnas con 3 contenedores en su
 interior mostrándonos algunas curiosidades de la comida.
 
-___Recetas
+#### Recetas
 
 En la pagina de las recetas sigue el modelo de la pagina principal, cambiando los colores de los
 contenedores según cambia el tipo de receta (desayuno, comida, cena y snack).
 
-___Página de contacto
+#### Página de contacto
 
 En la página de contacto se ha utilizado action="submeter-formulario.php" method="post" para
 poder hacer el formulario e introducir los datos de los clientes. 
@@ -80,11 +80,11 @@ La ruta empieza desde la Imperial Tarraco, que es donde se sitúa la estación d
 
 ## Precio de los menús
 
-___Para la realización de la tabla:
+#### Para la realización de la tabla:
 
 Se ha creado una tabla de los restaurantes, el precio del menú y si son vegetarianos o con opción para vegetarianos. La tabla se ha realizado mediante los comandos de boostrap 4.
 
-___Para la realización de la gráfica:
+#### Para la realización de la gráfica:
 
 La gráfica de la página web ha sido posible mediante el lenguaje mermaid.
 
