@@ -1,4 +1,4 @@
-# Wilnut
+# Walnut
 ### La página web que se explicara a continuación pertenece a la asignatura de WEBGIS creada a partir de las enseñanzas de clase y en casa.
 #### Para ver la página web Wilnut haz click al siguiente enlace. (https://andrea1508.github.io/backup/index.html)
 
