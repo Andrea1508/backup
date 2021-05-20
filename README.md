@@ -16,6 +16,7 @@ La tematica web trata sobre las ventajas de empezar a reducir el consumo de carn
 ## Metodologia
 _Paso 1_: 
 Crear un logo, crear diferentes layouts para las distintas paginas, recopilar la información de la página.
+
 _Paso 2_:  Creación del HTML
 Elaboración del Head: añadir los links necesarios para facilitar la elaboración de la web como por ejemplo:
   · Boostrap
